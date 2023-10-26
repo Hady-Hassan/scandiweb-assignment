@@ -20,7 +20,7 @@ function ProductList() {
   }, [])
 
   const getProducts = () => {
-    axios.get('http://localhost/ScandiTest/Functions/EndPoint.php', {
+    axios.get(process.env.REACT_APP_BASE_URL +'/Functions/EndPoint.php', {
       headers:{
         withCredentials: true,
         Accept: 'application/json',
@@ -47,7 +47,7 @@ function ProductList() {
     let newProducts = products.filter(product => !selected.includes(product.sku))
     setProducts(newProducts)
     console.log(selected)
-    axios.delete('http://localhost/ScandiTest/Functions/EndPoint.php', {
+    axios.delete(process.env.REACT_APP_BASE_URL +'/Functions/EndPoint.php', {
       headers:{
         withCredentials: true,
         Accept: 'application/json',
@@ -88,7 +88,7 @@ function ProductList() {
           {products.map(product => (
             <div class="col-md-3">
               <div className="card border border-dark text-center m-3">
-                <input type="checkbox" className="form-check-input m-2 delete-checkbox" value={product.sku} onChange={handleSelect} />
+                <input type="checkbox" className="delete-checkbox form-check-input m-2 " value={product.sku} onChange={handleSelect} />
                 <ProductCard
                   sku={product.sku}
                   name={product.name}

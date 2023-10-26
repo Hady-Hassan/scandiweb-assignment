@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         },
         "Book" => function ($data) 
         {
-            $sku = $data->data->SKU;
+            $sku = $data->data->sku;
             $name = $data->data->name;
             $price = $data->data->price;
             $weight = $data->data->weight;          
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         },
         "Furniture" => function ($data) 
         {
-            $sku = $data->data->SKU;
+            $sku = $data->data->sku;
             $name = $data->data->name;
             $price = $data->data->price;
             $height = $data->data->height;

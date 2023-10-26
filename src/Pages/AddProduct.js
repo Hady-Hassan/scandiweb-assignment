@@ -39,7 +39,7 @@ function AddProduct() {
 
 
     if (check()) {
-      axios.post('http://localhost/ScandiTest/Functions/EndPoint.php', {
+      axios.post(process.env.REACT_APP_BASE_URL +'/Functions/EndPoint.php', {
 
       headers:{
         withCredentials: true,
