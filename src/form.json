@@ -1,0 +1,30 @@
+[
+    {
+        "type": "DVD",
+        "fields": [
+            "Size"
+        ],
+        "units": "MB",
+        "description": "Please, provide size"
+    },
+    {
+        "type": "Book",
+        "fields": [
+            "Weight"
+        ],
+        "units": "KG",
+        "description": "Please, provide weight"
+    },
+    {
+        "type": "Furniture",
+        "fields": [
+            "Height",
+            "Width",
+            "Length"
+        ],
+        "units": "CM",
+        "description": "Please, provide dimensions"
+    }
+]
+
+
