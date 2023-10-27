@@ -40,13 +40,14 @@ function ProductList() {
     let newProducts = products.filter(product => !selected.includes(product.sku))
     setProducts(newProducts)
     console.log(selected)
-    axios.delete(process.env.REACT_APP_BASE_URL , {
-      headers:{
+    fetch(process.env.REACT_APP_BASE_URL, {
+      method: 'DELETE',
+      headers: {
         withCredentials: true,
         Accept: 'application/json',
         'Content-Type': 'application/json'
-    },
-      data: selected
+      },
+      body: JSON.stringify(selected)
     })
       .then(res => {
         console.log(res)

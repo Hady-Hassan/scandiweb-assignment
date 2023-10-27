@@ -39,15 +39,13 @@ function AddProduct() {
 
 
     if (check()) {
-      axios.post(process.env.REACT_APP_BASE_URL, {
-
-      headers:{
-        withCredentials: true,
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-    },
-      data: product
-    })
+      fetch(process.env.REACT_APP_BASE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(product)
+      })
       .then(res => {
         console.log(res)
       }).finally(() => {
