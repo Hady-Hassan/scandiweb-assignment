@@ -20,7 +20,7 @@ function ProductList() {
   }, [])
 
   const getProducts = () => {
-    axios.get(process.env.REACT_APP_BASE_URL +'/Functions/EndPoint.php', {
+    axios.get(process.env.REACT_APP_BASE_URL , {
       headers:{
         withCredentials: true,
         Accept: 'application/json',
@@ -47,7 +47,7 @@ function ProductList() {
     let newProducts = products.filter(product => !selected.includes(product.sku))
     setProducts(newProducts)
     console.log(selected)
-    axios.delete(process.env.REACT_APP_BASE_URL +'/Functions/EndPoint.php', {
+    axios.delete(process.env.REACT_APP_BASE_URL , {
       headers:{
         withCredentials: true,
         Accept: 'application/json',
