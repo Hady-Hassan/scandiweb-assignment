@@ -20,17 +20,10 @@ function ProductList() {
   }, [])
 
   const getProducts = () => {
-    axios.get(process.env.REACT_APP_BASE_URL , {
-      headers:{
-        withCredentials: true,
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-    }})
-      .then(res => {
-        setProducts(res.data)
-      })
-      .catch(err => {
-        console.log(err)
+    fetch(process.env.REACT_APP_BASE_URL)
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data)
       })
   }
   const handleSelect = (e) => {
